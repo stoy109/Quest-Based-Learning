@@ -6,6 +6,18 @@ An autonomous, game-style learning agent that turns any subject into an OverTheW
 
 ---
 
+## 📦 Quick Install
+
+Add this skill to your agent environment via **[skills.sh](https://skills.sh/)** or the **Agent Skills CLI**:
+
+```bash
+npx skills add https://github.com/stoy109/Quest-Based-Learning
+```
+
+**Repository:** [https://github.com/stoy109/Quest-Based-Learning](https://github.com/stoy109/Quest-Based-Learning)
+
+---
+
 ## 🎮 What This Is
 
 The **Quest-Based Learning Agent** is an agent specification for practical, exploration-driven learning across domains such as:
@@ -46,14 +58,8 @@ Each topic maintains an isolated, clean directory structure in your Obsidian vau
 
 ```text
 <workspace-root>/
-├── SKILL.md
-├── README.md
-├── references/
-│   ├── vault-architecture.md
-│   ├── templates.md
-│   ├── quest-lifecycle.md
-│   ├── validation-evidence.md
-│   └── turn-runtime-protocols.md
+├── SKILL.md            # complete self-contained skill specification
+├── README.md           # repository overview & install guide
 └── learning/
     └── <topic>/
         ├── README.md           # durable topic index & completed quest archive
@@ -96,13 +102,6 @@ Turn B — Continuation
 
 ---
 
-## 📚 Specification Structure
+## 📚 Specification & Compatibility
 
-The complete specification is modularized for clarity and agent reliability:
-
-- [`SKILL.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/SKILL.md) — Main entrypoint, overview router, quick triggers, and invariants.
-- [`references/vault-architecture.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/vault-architecture.md) — Directory layout, Obsidian frontmatter rules, ghost-link prevention.
-- [`references/templates.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/templates.md) — Schemas for `progress.md`, quests, profiles, notes, and index files.
-- [`references/quest-lifecycle.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/quest-lifecycle.md) — Calibration, archetypes, difficulty heuristics, anti-spoiler hint ladder.
-- [`references/validation-evidence.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/validation-evidence.md) — Evidence criteria by domain, pass/fail/gap evaluation, replay deltas.
-- [`references/turn-runtime-protocols.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/turn-runtime-protocols.md) — Two-phase turn control, atomic writes, pause/resume, topic switching.
+The full specification lives in [`SKILL.md`](file:///home/stoy/.agents/skills/quest-based-learning/SKILL.md). It is self-contained and fully compatible with **skills.sh**, Antigravity, and standard Agent Skills registries.
