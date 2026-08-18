@@ -14,11 +14,12 @@ The **Quest-Based Learning Agent** is an agent specification for practical, expl
 - **Theoretical & Technical:** Mathematics, Music Theory, Languages, Electronics, Data Science
 
 The agent acts as a **Quest Master** and persistent state manager:
-1. **Calibration:** Starts with a single practical task to gauge starting level (no long placement tests).
-2. **Just-In-Time Spawning:** Quests are generated one-by-one only after the prior quest is validated.
-3. **Observable Evidence:** Progression requires actual output, command logs, or code execution (zero theoretical essay questions).
-4. **Anti-Spoiler Hints:** Quests contain zero hints; dynamic hints are unlocked one tier at a time on explicit request.
-5. **Stateful Vault:** Tracks progress, active issues, and unlocked concepts directly in your Obsidian vault.
+1. **Modern Version Verification:** Automatically checks the web for current stable releases and modern API paradigms (e.g. GSAP v3+, Anime.js v4+, Godot 4.x, Tailwind v4) to prevent teaching deprecated syntax.
+2. **Calibration:** Starts with a single practical task to gauge starting level (no long placement tests).
+3. **Just-In-Time Spawning:** Quests are generated one-by-one only after the prior quest is validated.
+4. **Observable Evidence:** Progression requires actual output, command logs, or code execution (zero theoretical essay questions).
+5. **Anti-Spoiler Hints:** Quests contain zero hints; dynamic hints are unlocked one tier at a time on explicit request.
+6. **Stateful Vault:** Tracks progress, active issues, and unlocked concepts directly in your Obsidian vault.
 
 ---
 
@@ -45,8 +46,14 @@ Each topic maintains an isolated, clean directory structure in your Obsidian vau
 
 ```text
 <workspace-root>/
-├── SKILL.md            # complete self-contained skill specification
-├── README.md           # repository overview
+├── SKILL.md
+├── README.md
+├── references/
+│   ├── vault-architecture.md
+│   ├── templates.md
+│   ├── quest-lifecycle.md
+│   ├── validation-evidence.md
+│   └── turn-runtime-protocols.md
 └── learning/
     └── <topic>/
         ├── README.md           # durable topic index & completed quest archive
@@ -89,6 +96,13 @@ Turn B — Continuation
 
 ---
 
-## 📚 Specification & Compatibility
+## 📚 Specification Structure
 
-The full specification lives in [`SKILL.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/SKILL.md). It is self-contained and fully compatible with **skills.sh**, Antigravity, and standard Agent Skills registries.
+The complete specification is modularized for clarity and agent reliability:
+
+- [`SKILL.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/SKILL.md) — Main entrypoint, overview router, quick triggers, and invariants.
+- [`references/vault-architecture.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/vault-architecture.md) — Directory layout, Obsidian frontmatter rules, ghost-link prevention.
+- [`references/templates.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/templates.md) — Schemas for `progress.md`, quests, profiles, notes, and index files.
+- [`references/quest-lifecycle.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/quest-lifecycle.md) — Calibration, archetypes, difficulty heuristics, anti-spoiler hint ladder.
+- [`references/validation-evidence.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/validation-evidence.md) — Evidence criteria by domain, pass/fail/gap evaluation, replay deltas.
+- [`references/turn-runtime-protocols.md`](file:///home/stoy/.agents/skills/Quest-Based-Learning/references/turn-runtime-protocols.md) — Two-phase turn control, atomic writes, pause/resume, topic switching.

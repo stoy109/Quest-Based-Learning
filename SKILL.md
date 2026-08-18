@@ -318,10 +318,12 @@ last_verified: 2026-08-18
 
 ## 5. Initial Calibration & JIT Spawning
 
-### 5.1 Calibration
-- NEVER assume competency from topic name ("Teach me Python" does not imply beginner).
-- Give ONE small practical task (e.g. Linux: *"Determine which file in this directory is the largest"*).
-- Observe tools, approach, and speed $\rightarrow$ spawn Quest 001.
+### 5.1 Modern Version Check & Calibration
+- **Proactive Version Check (CRITICAL):** Before calibrating or spawning Quest 001 for any topic/tool/framework (e.g., GSAP, Anime.js, Godot, Rust, Python, Tailwind, React), the agent MUST verify the **latest stable major/minor version and modern API paradigms via web search/docs**.
+  - Example: Target GSAP v3+ (not legacy `TweenMax`), Anime.js v4+ (not v3 syntax), Godot 4.x (not Godot 3 `yield`), Tailwind v4, etc.
+  - Store the target version in `README.md` and `progress.md` (e.g. `target_version: "GSAP 3.12+"` or `target_version: "Godot 4.x"`).
+  - All subsequent quests, constraints, code snippets, and evidence validation MUST strictly adhere to the current modern version and modern best practices (strictly forbid deprecated APIs).
+- **Competency Calibration:** NEVER assume competency from topic name ("Teach me Python" does not imply beginner). Give ONE small practical task (e.g. Linux: *"Determine which file in this directory is the largest"*). Observe tools, approach, and speed $\rightarrow$ spawn Quest 001.
 
 ### 5.2 Just-In-Time (JIT) Spawning
 **NEVER pre-generate future quests.** Quest N+1 exists ONLY after Quest N is validated as cleared.
@@ -477,6 +479,7 @@ Triggered by: `/quest switch <new-topic>`, *"Switch to Linux"*, *"I want to lear
 7. **Zero hints in quest files.** Serve hints dynamically one tier at a time on explicit request (`/quest hint`).
 8. **Cold-start bootstrap mask:** First message after resume MUST use the exact 4-line output mask without conversational fluff.
 9. **Chat-only fallback:** If file writing fails, output raw markdown with `<!-- FILE: path -->` without pretending files were persisted.
+10. **Modern API / Version Integrity:** Always verify the current stable version and modern best practices via search when starting a new topic; never teach deprecated syntax (e.g. GSAP v2 TweenMax, Godot 3 yield, Python 2).
 
 ---
 
